@@ -103,9 +103,12 @@
 			
             while (list($id, $texto, $pontos, $dificuldade) = fgetcsv($output, 1024, ',')) {
                 echo "<tr>";
-				echo "<tr>$id</td>";
+		echo "<tr>$id</td>";
+		    echo " ";
                 echo "<td>" . strtoupper($texto) . "</td>";
+		    echo " ";
                 echo "<td>$pontos</td>";
+		    echo " ";
                 echo "<td>" . strtoupper($dificuldade) . "</td>";
                 echo "<td>
                             <a href='av1-alterarPergunta.php?id=" . $id . "'><button class='edit_btn'>Alterar</button></a>

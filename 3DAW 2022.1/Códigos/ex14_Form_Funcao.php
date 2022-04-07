@@ -39,7 +39,7 @@
         <h1>3DAW</h1>
         <h2>Exercício 14 - Form Funcao</h2>
 
-        <form action="ex13_Form_Funcao.php" method="post">
+        <form action="ex14_Form_Funcao.php" method="post">
             <label for="numero1">Número 1:</label><br>
             <input type="number" id="numero1" name="numero1" value="0"><br><br>
             <label for="numero2">Número 2:</label><br>

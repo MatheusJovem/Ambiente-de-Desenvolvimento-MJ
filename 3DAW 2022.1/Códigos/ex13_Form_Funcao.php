@@ -27,7 +27,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>3DAW - Exercício 13 - Matheus Jovem Seixas - 2010478300050</title>
+        <title>3DAW - Exercício 14 - Matheus Jovem Seixas - 2010478300050</title>
         <style>
             body{
                 text-align: center;
@@ -37,9 +37,9 @@
     </head>
     <body>
         <h1>3DAW</h1>
-        <h2>Exercício 13 - Form Operacoes</h2>
+        <h2>Exercício 14 - Form Funcao</h2>
 
-        <form action="ex13_operacoes.php" method="post">
+        <form action="ex13_Form_Funcao.php" method="post">
             <label for="numero1">Número 1:</label><br>
             <input type="number" id="numero1" name="numero1" value="0"><br><br>
             <label for="numero2">Número 2:</label><br>

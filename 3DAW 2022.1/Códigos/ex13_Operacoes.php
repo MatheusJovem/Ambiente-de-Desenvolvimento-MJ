@@ -36,7 +36,7 @@
         <h1>3DAW</h1>
         <h2>Exercício 13 - Form Operacoes</h2>
 
-        <form action="ex13_soma.php" method="post">
+        <form action="ex13_Operacoes.php" method="post">
             <label for="numero1">Número 1:</label><br>
             <input type="number" id="numero1" name="numero1" value="0"><br><br>
             <label for="numero2">Número 2:</label><br>

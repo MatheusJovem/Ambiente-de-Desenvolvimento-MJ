@@ -17,10 +17,8 @@
         }
         fclose($arquivoAluno1);
 
-        $arquivoAluno1w = fopen("Alunos.txt", "w") or die("Arquivo 1 com problema.");
-        $cabecalho = "matricula;nome;email\n";
-        fwrite($arquivoAluno1w, $cabecalho);
-        $linha = $matricula . ";" . $nome . ";" . $email;
+        $arquivoAluno1w = fopen("Alunos.txt", "a") or die("Arquivo 1 com problema.");
+        $linha = $matricula . ";" . $nome . ";" . $email . "\n";
         fwrite($arquivoAluno1w, $linha);
         fclose($arquivoAluno1w);
 

@@ -4,6 +4,13 @@
         $nome = $_POST["nome"];
         $email = $_POST["email"];
 
+        if(!file_exists("Alunos.txt")) {
+            $arquivoAluno1w = fopen("Alunos.txt", "w") or die("Arquivo 1 com problema.");
+            $cabecalho = "matricula;nome;email\n";
+            fwrite($arquivoAluno1w, $cabecalho);
+            fclose($arquivoAluno1w);
+        }
+
         $arquivoAluno1 = fopen("Alunos.txt", "r") or die("Arquivo 1 com problema.");
         while(!feof($arquivoAluno1)){
             echo fgets($arquivoAluno1) . "<br>";

@@ -100,7 +100,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $matricula = $_POST["matricula"];
     if (file_exists("usuarios.csv")) {
         $arquivo = fopen("usuarios.csv", "r");
-        $cont=0;//contador visual para mostrar cabeçalho e fechar loop de repetição antecipadamente quando encontrada informação
+        $cont=0;
         while (list($matricula, $nome, $funcao) = fgetcsv($arquivo, 1000, ",")) {
             if ($matricula == $matricula || $matricula == "matricula") {
                 echo "<tr><td>" . $matricula . "</td>";
@@ -110,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "<br>";
                 $cont++;
 
-                if($cont==2)
+                if($cont==1)
                 {
                     break;
                 }

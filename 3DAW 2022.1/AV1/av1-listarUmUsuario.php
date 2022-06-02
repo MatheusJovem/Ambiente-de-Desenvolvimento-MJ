@@ -90,23 +90,34 @@
 
 <body>
 <h1>AV1 - 3DAW - Listar Um Usuário</h1>
+<form action="av1-listarUmUsuario.php" method="post">
+    Matricula do Usuário: <input type="text" name="matricula"><br><br>
+    <input type="submit" value="Visualizar">
+</form>
+<br>
 <?php
-require "dados-usuarios.php";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $matricula = $_POST["matricula"];
+    if (file_exists("usuarios.csv")) {
+        $arquivo = fopen("usuarios.csv", "r");
+        $cont=0;//contador visual para mostrar cabeçalho e fechar loop de repetição antecipadamente quando encontrada informação
+        while (list($matricula, $nome, $funcao) = fgetcsv($arquivo, 1000, ",")) {
+            if ($matricula == $matricula || $matricula == "matricula") {
+                echo "<tr><td>" . $matricula . "</td>";
+                echo "<td>" . $nome . "</td>";
+                echo "<td>" . $funcao . "</td>";
+                echo "</tr>";
+                echo "<br>";
+                $cont++;
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-    if(file_exists($temp)) unlink($temp);
-    if(file_exists($tempUsuarios)) unlink($tempUsuarios);
-    echo "<div class='container'>";
-
-    if (file_exists($csv)) {
-        $output = fopen($csv, 'r');
-
-        while (list($matricula, $nome, $funcao) = fgetcsv($output, 1024, ',')) {
-
+                if($cont==2)
+                {
+                    break;
+                }
+            }
         }
-        fclose($output);
+        fclose($arquivo);
     }
-
 }
 ?>
 

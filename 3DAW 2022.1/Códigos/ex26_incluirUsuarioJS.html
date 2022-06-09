@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <title>3DAW - Exercício 26 - Matheus Jovem Seixas - 2010478300050</title>
+
+    <link rel="stylesheet" href="ex26_estilo.css">
+
+    <script>
+        function enviaForm(){
+            let mat = document.getElementById("matricula").value;
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                console.log("this.readyState: " + this.readyState);
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("resultado").innerHTML = xhttp.responseText;
+                }
+            };
+            xhttp.open("GET", "ex26_incluirUsuarioPHP.php", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <h1>3DAW</h1>
+    <h2>Exercício 26 - Incluir Javascript</h2>
+
+    <form action="ex26_incluirUsuarioPHP.php" method="POST">
+        Matricula: <input type="text" id="matricula" name="matricula" value=''><br>
+        Nome: <input type="text" name="nome" value=''><br>
+        Função: <input type="text" name="funcao" value=''><br>
+        Senha: <input type="text" name="senha" value=''><br>
+        <input type="button" value="Incluir" onclick="enviaForm();">
+    </form><br>
+    <div id="resultado"></div>
+</body>
+</html>

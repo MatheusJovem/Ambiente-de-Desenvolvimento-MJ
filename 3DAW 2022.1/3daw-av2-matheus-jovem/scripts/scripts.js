@@ -25,16 +25,6 @@ function showData2(){
     }).then(response => response.text()).then(response =>{
         result.innerHTML = response;
     }).catch(err => console.log(err));
-
-    fetch(url, {
-        method:"POST",
-        body:form
-    }).then(response =>{
-        response.json().then(data =>{
-            window.localStorage.setItem('unidade',JSON.stringify(data[0]));
-            window.location.href = 'alterarUnidade.html';
-        })
-    })
 }
 
 function incluirUnidade(){
